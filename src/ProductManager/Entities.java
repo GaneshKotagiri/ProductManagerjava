@@ -1,3 +1,5 @@
+package ProductManager;
+
 public class Entities {
     private String Name;
     private String BrandName;
@@ -12,9 +14,6 @@ public class Entities {
         CameraResolution = cameraResolution;
         Battery = battery;
     }
-
-
-
     public String getName() {
         return Name;
     }
@@ -56,7 +55,7 @@ public class Entities {
     }
     @Override
     public String toString() {
-        return "Entities{" +
+        return "ProductManager.Entities{" +
                 "Name='" + Name + '\'' +
                 ", BrandName='" + BrandName + '\'' +
                 ", Price=" + Price +
