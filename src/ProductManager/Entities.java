@@ -53,6 +53,7 @@ public class Entities {
     public void setBattery(String battery) {
         Battery = battery;
     }
+    //we have to convert the entities type to String using toString to get the output
     @Override
     public String toString() {
         return "ProductManager.Entities{" +

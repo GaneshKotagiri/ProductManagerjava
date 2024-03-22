@@ -1,5 +1,7 @@
 package ProductManager;
 
+import java.io.FileOutputStream;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -11,7 +13,7 @@ public class Main {
         service.addEntities(new Entities("A6 Galaxy", "Samsung", 1200,"High","1600mw"));
         service.addEntities(new Entities("15 pro","Apple", 1200, "High","200mw"));
         service.addEntities(new Entities("14 pro","Apple", 400, "Moderate","200mw"));
-        service.addEntities(new Entities("14 pro max","Apple", 1200, "High","1600mw"));
+        Entities E = service.addEntities(new Entities("14 pro max","Apple", 1200, "High","1600mw"));
 //        for (Entities entity:service.getEntities()){
 //            System.out.println(entity);
 //        }
@@ -19,6 +21,20 @@ public class Main {
         System.out.println(service.getEntityByName("14 pro"));
         System.out.println(service.getEntityByBrand("Apple"));
         System.out.println(service.getEntityByPrice(400));
+        // Using streams we saved data in the file output.txt
+        try{
+            FileOutputStream output=new FileOutputStream("C:\\Users\\ganesh\\Desktop\\output.txt");
+            //we are using the Entities type object in for each loop
+            //service is the object for service class and getEntities is the method where we can retrieve all the entities
+            // we cannot use byte array method for lists
+            //we then write the data in entities to output and convert it using toString method and getBytes method
+            for(Entities entities:service.getEntities()){
+                output.write(entities.toString().getBytes());
+                output.write(System.lineSeparator().getBytes());
+            }
 
+        }catch (Exception e){
+            e.getStackTrace();
+        }
     }
 }
