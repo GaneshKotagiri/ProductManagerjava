@@ -1,7 +1,5 @@
 # ProductManagerjava
 
-# Product Management Application
-
 ## Overview
 This project is a **Product Management Application** built using Java. It provides functionalities to manage product information, including various attributes such as price, model, and category. The application supports operations like adding, updating, deleting, and retrieving product details, and it uses a relational database for data persistence.
 
